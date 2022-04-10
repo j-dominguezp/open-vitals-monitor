@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  @apply outline-none focus:ring-2 focus:ring-slate-300/30;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  @apply bg-white dark:bg-gray-800 transition-colors duration-300;
 }
