@@ -5,7 +5,6 @@ import { AvailableThemesE } from '../store/useThemeStore';
 import { useThemeStore } from '../store/useThemeStore';
 
 const ThemeToggle = () => {
-  const __hasHydrated = useThemeStore(useCallback((s) => s.__hasHydrated, []));
   const theme = useThemeStore(useCallback((s) => s.theme, []));
   const onToggleTheme = useThemeStore(useCallback((s) => s.onToggleTheme, []));
 
@@ -16,7 +15,7 @@ const ThemeToggle = () => {
       pressed={theme === AvailableThemesE.DARK}
       onPressedChange={() => onToggleTheme()}
     >
-      {__hasHydrated && (theme === AvailableThemesE.LIGHT ? <FiSun /> : <FiMoon />)}
+      {theme === AvailableThemesE.LIGHT ? <FiSun /> : <FiMoon />}
     </Toggle>
   );
 };

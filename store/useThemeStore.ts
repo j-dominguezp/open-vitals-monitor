@@ -10,8 +10,6 @@ export enum AvailableThemesE {
 interface ThemeStoreI {
   theme: AvailableThemesE;
   onToggleTheme: () => void;
-  __hasHydrated: boolean;
-  __setHasHydrated: (__hasHydrated: boolean) => void;
 }
 
 export const useThemeStore = create(
@@ -26,12 +24,9 @@ export const useThemeStore = create(
 
           return { theme: themeToApply };
         }),
-      __hasHydrated: false,
-      __setHasHydrated: (__hasHydrated) => ({ __hasHydrated }),
     }),
     {
       name: 'theme',
-      onRehydrateStorage: () => (state) => state?.__setHasHydrated(true),
     }
   )
 );
