@@ -16,7 +16,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-x-6">
           <a href="https://github.com/j-dominguezp/open-vitals-monitor" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="text-2xl text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 " />
+            <FaGithub className="text-2xl text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100" />
           </a>
 
           <ThemeSwitcher />

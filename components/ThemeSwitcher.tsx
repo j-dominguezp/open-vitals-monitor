@@ -1,25 +1,24 @@
-import * as Switch from '@radix-ui/react-switch';
+import { Toggle } from '@radix-ui/react-toggle';
 import { useCallback } from 'react';
-import { FaRegMoon, FaRegSun } from 'react-icons/fa';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { AvailableThemesE } from '../store/useThemeStore';
 import { useThemeStore } from '../store/useThemeStore';
 
-const ThemeSwitch = () => {
+const ThemeToggle = () => {
   const __hasHydrated = useThemeStore(useCallback((s) => s.__hasHydrated, []));
   const theme = useThemeStore(useCallback((s) => s.theme, []));
   const onToggleTheme = useThemeStore(useCallback((s) => s.onToggleTheme, []));
 
   return (
-    <Switch.Root
-      className="w-14 h-5 bg-amber-500 dark:bg-purple-500 inline-flex items-center justify-start dark:justify-end rounded-full"
-      checked={theme === AvailableThemesE.DARK}
-      onCheckedChange={() => onToggleTheme()}
+    <Toggle
+      aria-label="Switch theme"
+      className="appearance-none transition-colors duration-300 hover:bg-orange-400/10 text-orange-500 hover:text-orange-400 dark:hover:bg-violet-400/30 dark:text-violet-400 dark:hover:text-violet-300 text-xl p-3 rounded-full focus:ring focus:ring-amber-500/40 dark:focus:ring-violet-400/30"
+      pressed={theme === AvailableThemesE.DARK}
+      onPressedChange={() => onToggleTheme()}
     >
-      <Switch.Thumb className="flex items-center justify-center transform bg-white rounded-full h-7 w-7 text-amber-500 dark:text-purple-400 ring ring-amber-500/30 hover:active:ring-amber-500/60 dark:ring-purple-400/70 transition-shadow duration-300">
-        {__hasHydrated && (theme === AvailableThemesE.LIGHT ? <FaRegSun /> : <FaRegMoon />)}
-      </Switch.Thumb>
-    </Switch.Root>
+      {__hasHydrated && (theme === AvailableThemesE.LIGHT ? <FiSun /> : <FiMoon />)}
+    </Toggle>
   );
 };
 
-export default ThemeSwitch;
+export default ThemeToggle;
