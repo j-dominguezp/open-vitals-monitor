@@ -11,7 +11,7 @@ const ThemeToggle = () => {
   return (
     <Toggle
       aria-label="Switch theme"
-      className="appearance-none transition-colors duration-300 hover:bg-orange-400/10 text-orange-500 hover:text-orange-400 dark:hover:bg-violet-400/30 dark:text-violet-400 dark:hover:text-violet-300 text-xl p-3 rounded-full focus:ring focus:ring-amber-500/40 dark:focus:ring-violet-400/30"
+      className="appearance-none transition-colors duration-300 hover:bg-orange-400/10 text-orange-500 hover:text-orange-400 dark:hover:bg-violet-400/30 dark:text-violet-400 dark:hover:text-violet-300 text-xl p-3 rounded-full focus:ring focus:ring-amber-500/40 dark:focus:ring-violet-300/40"
       pressed={theme === AvailableThemesE.DARK}
       onPressedChange={() => onToggleTheme()}
     >
