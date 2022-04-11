@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FaGithub, FaHeartbeat } from 'react-icons/fa';
-import ThemeSwitcher from './ThemeSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   return (
@@ -19,7 +19,7 @@ const Navbar = () => {
             <FaGithub className="text-2xl text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100" />
           </a>
 
-          <ThemeSwitcher />
+          <ThemeToggle />
         </div>
       </div>
     </nav>
